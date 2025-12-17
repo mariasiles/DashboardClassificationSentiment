@@ -21,8 +21,8 @@ from clean_dataset import (
 # =============================
 @st.cache(allow_output_mutation=True)
 def load_artifacts():
-    vectorizer = joblib.load("./VECTORES/tfidf_vectorizer.pkl")
-    model = joblib.load("./MODELOS/Ensemble/cache_lr_model.joblib")
+    vectorizer = joblib.load("tfidf_vectorizer.pkl")
+    model = joblib.load("cache_lr_model.joblib")
     return vectorizer, model
 
 vectorizer, model = load_artifacts()
@@ -108,3 +108,4 @@ if st.button("Analyze sentiment"):
 # Nota
 # =============================
 st.caption("Model and vectorizer loaded from .joblib files. Input is cleaned with the same pipeline as training. Probabilities and top words are shown.")
+
